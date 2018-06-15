@@ -11,7 +11,11 @@ TRAINING_DATA_DIR=${HOME}/vendor
 TESSERACT_OCR_DIR=${HOME}/vendor/tesseract-ocr
 ENVSCRIPT=$BUILD_DIR/.profile.d/tesseract-ocr.sh
 
-TESSERACT_OCR_LANGUAGES=eng
+if [[ -f "$ENV_DIR/TESSERACT_OCR_LANGUAGES" ]]; then
+  TESSERACT_OCR_LANGUAGES=$(cat "$ENV_DIR/TESSERACT_OCR_LANGUAGES")
+else
+  TESSERACT_OCR_LANGUAGES=eng
+fi
 
 echo "Unpacking Tesseract-OCR binaries"
 mkdir -p $INSTALL_DIR
