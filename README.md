@@ -8,20 +8,22 @@ The first step consists in allowing your Heroku app to use multiple buildpacks. 
 
 1. setup your app as  
     ```
-    heroku buildpacks:set heroku/LANG
     heroku buildpacks:add https://github.com/verheyenkoen/heroku-buildpack-tesseract
+    heroku buildpacks:set heroku/LANG
     ```
 	
     where `LANG` is the language used by your app (e.g., `ruby`, `python`, or `nodejs`). A complete list of Heroku buildpacks can be found [here](https://devcenter.heroku.com/articles/buildpacks).
+    
+    > Note : You should make sure `heroku/nodejs` is initilized after `heroku-buildpack-tesseract` or npm [automatically run](https://devcenter.heroku.com/changelog-items/1557) will not work.
 1. If you want Tesseract to be able to work with any other languages than English, set the environment variable `TESSERACT_OCR_LANGUAGES` to a comma-separated string of [ISO 639-2 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes).  
     ```bash
-    $ heroku config:set TESSERACT_OCR_LANGUAGES="eng,fra,deu,nld"
+    $ heroku config:set TESSERACT_OCR_LANGUAGES="chi_tra"
     ```
 1. Push your code to Heroku
 1. You can use the `tesseract` binary in your Heroku app!
 
 ## Note
-This fork upgrades Tesseract binary version from 3.03 to 3.04.01
+This fork upgrades Tesseract binary version from 3.04.01 to 4.0
 
 ## License
 MIT License.
