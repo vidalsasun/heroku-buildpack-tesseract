@@ -37,6 +37,8 @@ then
      #curl https://github.com/DaanVanVugt/tesseract-mrz/raw/master/lang/OCRB.traineddata.gz > $INSTALL_DIR_TRAINING_DATA/OCRB.traineddata.gz
      wget https://github.com/DaanVanVugt/tesseract-mrz/raw/master/lang/OCRB.traineddata.gz -O $INSTALL_DIR_TRAINING_DATA/OCRB.traineddata.gz
      gunzip $INSTALL_DIR_TRAINING_DATA/OCRB.traineddata.gz
+     wget https://tessdata.projectnaptha.com/4.0.0/eng.traineddata.gz -O $INSTALL_DIR_TRAINING_DATA/eng.traineddata.gz    
+     gunzip $INSTALL_DIR_TRAINING_DATA/eng.traineddata.gz
    done
 fi
 
