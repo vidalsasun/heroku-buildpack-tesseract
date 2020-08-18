@@ -39,6 +39,7 @@ then
      gunzip $INSTALL_DIR_TRAINING_DATA/OCRB.traineddata.gz
      wget https://tessdata.projectnaptha.com/4.0.0/eng.traineddata.gz -O $INSTALL_DIR_TRAINING_DATA/eng.traineddata.gz    
      gunzip $INSTALL_DIR_TRAINING_DATA/eng.traineddata.gz
+     wget https://github.com/tesseract-ocr/tessdata/blob/master/eng.traineddata -O $INSTALL_DIR_TRAINING_DATA/eng-lts.traineddata    
    done
 fi
 
